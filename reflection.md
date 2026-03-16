@@ -30,6 +30,10 @@ notes:
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+I used copilot to assist me in fixing the bugs that I found. I asked it to check why the hints were incorrect and what I should change, it told me that the hints were inverted and all I had to do was flip them. This was correct and the hints worked correctly after this change.
+
+The AI was not incorrect but it didn't give me the best answer to one of the bugs. The bug was that it incorrectly displayed the range of the secret to the user. The AI suggested creating a new variable to store the range which was correct but there was already a variable doing that. I used the existing variable to fix the bug.
+
 ---
 
 ## 3. Debugging and testing your fixes
@@ -39,6 +43,8 @@ notes:
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
+I reset the game and ran it again testing out the fix I implemented. I kept track of the output keeping in mind what the correct output was.
+AI was able to create tests that run the new changes I made to make sure they work.
 ---
 
 ## 4. What did you learn about Streamlit and state?
@@ -47,6 +53,10 @@ notes:
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 - What change did you make that finally gave the game a stable secret number?
 
+I think that the secret number kept changed because the state of the game kept getting reset after a guess was put in by the user.
+Streamlit "reruns" makes it so your script is ran again from the beginning. The session state keeps track of the status of the game, if it is set to "playing" then the game hasn't ended yet.
+
+I checked in the code that set the secret number and made sure it wasn't being changed after every guess.
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -55,3 +65,6 @@ notes:
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+I will be using tests more often to quickly test my code and changes without having to run my program again.
+Next time I would like to create the tests myself and have AI double check them. I think that AI generates code that generally works well, I think that it is an effective tool if you already know the code and want to quickly scan it and point out bugs.
